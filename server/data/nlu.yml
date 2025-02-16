@@ -1,0 +1,195 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hy
+    - hyy
+    - hyyy
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - delta
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - quit
+    - exit
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yeah
+    - sure
+    - please
+    - absolutely
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: water_level
+  examples: |
+    - Tell me about water levels
+    - What is the current water level?
+    - How deep is the water table?
+    - Level of water
+
+- intent: hydrogeological_scenario
+  examples: |
+    - Explain the hydrogeological scenario
+    - What is an aquifer?
+    - How does groundwater flow?
+
+- intent: water_quality
+  examples: |
+    - How is the water quality?
+    - What are the parameters for water quality?
+    - Is the water safe to drink?
+
+- intent: available_reports
+  examples: |
+    - What reports are available?
+    - Show me groundwater reports
+    - Do you have a groundwater assessment report?
+
+- intent: generate_report
+  examples: |
+    - Generate a comprehensive groundwater report
+    - I need a groundwater report
+    - Give me a full report on groundwater
+
+- intent: noc_conditions
+  examples: |
+    - What are the conditions for NOC?
+    - Tell me the NOC rules
+    - What are the NOC requirements?
+    = noc rules
+
+- intent: noc_guidance
+  examples: |
+    - How to obtain NOC?
+    - Guide me on NOC process
+    - What is the process for getting an NOC?
+    - noc guidance
+    - noc guidlines
+    - noc guide
+    
+
+- intent: groundwater_terms
+  examples: |
+    - Define groundwater terms
+    - What is an aquifer?
+    - Explain groundwater terminology
+
+- intent: training_opportunities
+  examples: |
+    - What training opportunities are available?
+    - Are there any groundwater management workshops?
+    - Can I take a course on groundwater?
+    - training
+
+- intent: nlu_fallback
+  examples: |
+    - What is the weather today?
+    - Tell me a joke
+    - Who is the president?
+    - number
+    - mobile number
+    - call me
+    
+- intent: noc
+  examples: |
+    - noc
+    - noooc
+    - ncc
+
+- intent: repeat_yourself
+  examples: |
+    - repeat
+    - repeat yourself
+    - again
+    - what can you do
+    - Can you say that again?
+    - Please repeat
+    - Repeat what you said
+    - Say that again
+    - Could you repeat yourself?
+    - Again, please
+    - I didn't catch that, repeat
+    - What did you just say?
+    - Repeat the last message
+
+
+
+

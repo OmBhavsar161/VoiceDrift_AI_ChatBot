@@ -1,0 +1,94 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - water_level
+  - noc
+  - hydrogeological_scenario
+  - water_quality
+  - available_reports
+  - generate_report
+  - noc_conditions
+  - noc_guidance
+  - groundwater_terms
+  - training_opportunities
+  - out_of_scope
+  - repeat_yourself
+  
+
+responses:
+  utter_greet:
+    - text: "Hii! Welcome to the VoiceDrift AI Chatbot!<br />I am Delta, your AI-powered Virtual Assistant. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+
+
+  utter_goodbye:
+    - text: "Goodbye! Have a nice day."
+
+  utter_water_level:
+    - text: "The water level scenario depends on the aquifer type, recharge rates, and extraction patterns. For specific data, please refer to the latest groundwater assessment report for your area."
+
+  utter_hydrogeological_scenario:
+    - text: "The hydrogeological scenario includes information about aquifer properties, groundwater flow, and recharge mechanisms. Detailed studies are required for accurate assessment."
+
+  utter_water_quality:
+    - text: "Water quality is assessed based on parameters like pH, TDS, hardness, and contamination levels. Regular monitoring is essential to ensure safe water usage."
+
+  utter_available_reports:
+    - text: "Available reports include Groundwater Resource Assessment Reports, Water Quality Reports, and Hydrogeological Studies. Contact your local groundwater authority for access."
+
+  utter_generate_report:
+    - text: |
+        Comprehensive Groundwater Report:<br />
+        1. Groundwater Resource Assessment: Includes recharge rates, extraction data, and sustainability analysis.<br />
+        2. Categorization of the Area: Classified as Safe, Semi-Critical, Critical, or Over-Exploited based on groundwater usage.<br />
+        3. Groundwater Management Practices: Recommendations for rainwater harvesting, artificial recharge, and sustainable extraction.<br />
+        4. NOC Conditions: Conditions for obtaining NOC include permissible extraction limits, purpose of use, and compliance with regulations.<br />
+        5. How to Obtain NOC: Submit an application to the groundwater authority with required documents like site details, extraction purpose, and hydrogeological report.<br />
+        6. Groundwater Terms: Definitions of terms like Aquifer, Recharge, Water Table, and Piezometric Surface.<br />
+        7. Training Opportunities: Workshops and courses on groundwater management are offered by institutions like CGWB and NIH.
+
+  utter_noc_conditions:
+    - text: "Conditions for obtaining NOC include permissible extraction limits, purpose of use (domestic/industrial/agricultural), and compliance with groundwater regulations."
+    # <br />Would you like to receive a PDF of these conditions?"
+  
+
+  utter_noc_guidance:
+    - text: "To obtain NOC, submit an application to the groundwater authority with required documents like site details, extraction purpose, and hydrogeological report."
+    # <br />Would you like to receive a PDF of these guidance details?" 
+ 
+
+  utter_pdf_link:
+    - text: "Here is the link for the PDF: [Click Here for PDF](https://rera.rajasthan.gov.in/Content/uploads/f70aed69-0f30-420b-9b46-9c47f2235e98.PDF)"
+
+  utter_groundwater_terms:
+    - text: |
+        Groundwater Terms:<br />
+        1. Aquifer: A body of permeable rock that can contain or transmit groundwater.<br />
+        2. Recharge: The process by which water enters an aquifer.<br />
+        3. Water Table: The upper surface of the zone of saturation.<br />
+        4. Piezometric Surface: The level to which water will rise in a well.
+
+  utter_training_opportunities:
+    - text: "Training opportunities include workshops and courses offered by institutions like the Central Ground Water Board (CGWB) and National Institute of Hydrology (NIH)."
+  
+  utter_default:
+    - text: "I'm sorry, I didn't understand your query.<br />Please ask about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+
+  utter_negative_response:
+    - text: "No problem. Is there anything else I can assist you with?"
+
+  utter_you_can_ask:
+    - text: "You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+
+  utter_iamabot:
+    - text: "I am Delta, your AI powered Virtual Assistant. How can I assist you today?."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+

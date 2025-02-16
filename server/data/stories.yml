@@ -1,0 +1,109 @@
+version: "3.1"
+
+stories:
+
+- story: greet and provide introduction
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- story: user asks for water level
+  steps:
+    - intent: water_level
+    - action: utter_water_level
+
+- story: user asks about hydrogeological scenario
+  steps:
+    - intent: hydrogeological_scenario
+    - action: utter_hydrogeological_scenario
+
+- story: user asks about water quality
+  steps:
+    - intent: water_quality
+    - action: utter_water_quality
+
+- story: user asks for available reports
+  steps:
+    - intent: available_reports
+    - action: utter_available_reports
+
+- story: user requests a comprehensive report
+  steps:
+    - intent: generate_report
+    - action: utter_generate_report
+
+- story: user asks about NOC conditions
+  steps:
+    - intent: noc_conditions
+    - action: utter_noc_conditions
+    # - intent: affirm  # This covers responses like "yes", "y", "yeah", etc.
+    # - action: utter_pdf_link
+    # - intent: deny
+    # - action: utter_negative_response
+    # - action: utter_you_can_ask
+    # - intent: deny
+    # - action: utter_goodbye
+    # - intent: affirm
+    # - action: utter_you_can_ask
+
+- story: user asks for NOC guidance
+  steps:
+    - intent: noc_guidance
+    - action: utter_noc_guidance
+    # - intent: affirm
+    # - action: utter_pdf_link
+    # - intent: deny
+    # - action: utter_negative_response
+    # - action: utter_you_can_ask
+    # - intent: deny
+    # - action: utter_goodbye
+    # - intent: affirm
+    # - action: utter_you_can_ask
+
+- story: user asks for NOC conditions and requests PDF
+  steps:
+    - intent: noc
+    - action: utter_noc_conditions
+    # - intent: affirm  # This covers responses like "yes", "y", "yeah", etc.
+    # - action: utter_pdf_link
+    # - intent: deny
+    # - action: utter_negative_response
+    # - action: utter_you_can_ask
+    # - intent: deny
+    # - action: utter_goodbye
+    # - intent: affirm
+    # - action: utter_you_can_ask
+
+- story: user asks for NOC guidance and requests PDF
+  steps:
+    - intent: noc_guidance
+    - action: utter_noc_guidance
+    # - intent: affirm
+    # - action: utter_pdf_link
+    # - intent: deny
+    # - action: utter_negative_response
+    # - action: utter_you_can_ask
+    # - intent: deny
+    # - action: utter_goodbye
+    # - intent: affirm
+    # - action: utter_you_can_ask
+
+- story: user asks about groundwater terms
+  steps:
+    - intent: groundwater_terms
+    - action: utter_groundwater_terms
+
+- story: user asks about training opportunities
+  steps:
+    - intent: training_opportunities
+    - action: utter_training_opportunities
+
+- story: user asks what can you do
+  steps:
+    - intent: repeat_yourself
+    - action: utter_you_can_ask
+
+- story: user asks something out of scope
+  steps:
+    - intent: nlu_fallback
+    - action: utter_default
