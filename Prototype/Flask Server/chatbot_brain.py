@@ -4,6 +4,7 @@ Greeting_list = ["hi", "hii", "hiii", "hello", "hey", "hi there", "delta"]
 Goodbye_list = ["exit", "quit", "bye"]
 Deny_list = ["no", "not", "never", "none", "nn", "n"]
 Affirm_list = ["yes", "ofcourse", "why not", "y", "yy", "yeah", "yup", "sure", "absolutely", "definitely", "certainly", "ok", "okay", "indeed", "right", "true", "affirmative", "correct", "exactly"]
+Repeat_list = ["repeat", "repeat again", "can't hear", "repeat yourself", "say again"]
 
 class VoiceDriftChatbot:
     def __init__(self):
@@ -46,11 +47,10 @@ class VoiceDriftChatbot:
         return report
 
     def noc_conditions_response(self):
-        response = "Conditions for obtaining NOC include permissible extraction limits, purpose of use (domestic/industrial/agricultural), and compliance with groundwater regulations."
-        # return response + "\nWould you like to receive a PDF of these conditions?"
+        return "Conditions for obtaining NOC include permissible extraction limits, purpose of use (domestic/industrial/agricultural), and compliance with groundwater regulations."
+
     def noc_guidance_response(self):
-        response = "To obtain NOC, submit an application to the groundwater authority with required documents like site details, extraction purpose, and hydrogeological report."
-        # return response + "\nWould you like to receive a PDF of these guidance details?"
+        return "To obtain NOC, submit an application to the groundwater authority with required documents like site details, extraction purpose, and hydrogeological report."
 
     def groundwater_terms_response(self):
         return """
@@ -67,26 +67,35 @@ class VoiceDriftChatbot:
     def default_response(self):
         return "I'm sorry, I didn't understand your query.<br />Please ask about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
 
+    def repeat_response(self):
+        return "You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+
     def get_response(self, user_input):
         user_input = user_input.lower()
-        if re.search(r"water level|level of water", user_input):
+        if user_input in Repeat_list:
+            return self.repeat_response()
+        if re.search(r"water level|level of water|depth of water|groundwater depth", user_input):
             return self.responses["water_level"]()
-        elif re.search(r"hydrogeological|aquifer|groundwater flow", user_input):
+        elif re.search(r"hydrogeological|aquifer|groundwater flow|subsurface water", user_input):
             return self.responses["hydrogeological_scenario"]()
-        elif re.search(r"water quality|quality of water", user_input):
+        elif re.search(r"water quality|quality of water|contaminants|pollution levels", user_input):
             return self.responses["water_quality"]()
-        elif re.search(r"available reports|reports for area", user_input):
+        elif re.search(r"available reports|reports for area|hydrological reports|groundwater assessment", user_input):
             return self.responses["available_reports"]()
-        elif re.search(r"generate report|comprehensive report|report|groundwater report", user_input):
+        elif re.search(r"generate report|comprehensive report|report|groundwater report|hydrological study", user_input):
             return self.responses["generate_report"]()
-        elif re.search(r"noc conditions|conditions for noc", user_input):
+        elif re.search(r"noc conditions|conditions for noc|noc condition|permission for groundwater use", user_input):
             return self.responses["noc_conditions"]()
-        elif re.search(r"how to obtain noc|guidance for noc", user_input):
+        elif re.search(r"how to obtain noc|guidance for noc|noc guidance|noc application process", user_input):
             return self.responses["noc_guidance"]()
-        elif re.search(r"groundwater terms|definitions|ground water terms", user_input):
+        elif re.search(r"groundwater terms|definitions|ground water terms|hydrological glossary", user_input):
             return self.responses["groundwater_terms"]()
-        elif re.search(r"training opportunities|workshops", user_input):
+        elif re.search(r"training opportunities|workshops|courses on groundwater|hydrology training", user_input):
             return self.responses["training_opportunities"]()
+        elif re.search(r"recharge methods|rainwater harvesting|artificial recharge", user_input):
+            return "Artificial recharge methods include rainwater harvesting, percolation tanks, and recharge wells to enhance groundwater levels."
+        elif re.search(r"groundwater conservation|sustainable water use|water management", user_input):
+            return "Groundwater conservation strategies involve controlled extraction, rainwater harvesting, and policies to regulate overuse."
         else:
             return self.responses["default"]()
 
@@ -94,8 +103,7 @@ class VoiceDriftChatbot:
 def chat():
     chatbot = VoiceDriftChatbot()
     print("Hii! Welcome to the VoiceDrift AI Chatbot!<br />I am Delta, your AI-powered Virtual Assistant. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
-    # print("I am Delta, your AI-powered Virtual Assistant. How can I assist you today?")
-    # print("You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
+
     while True:
         user_input = input("Enter here: ")
         if user_input.lower() in Goodbye_list:
@@ -105,15 +113,16 @@ def chat():
                 print("Goodbye! Have a nice day.")
                 break
             elif follow_up.lower() in Affirm_list:
-                print(
-                    "You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
+                print("You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
                 continue
         elif user_input.lower() in Greeting_list:
             print("Hi! I am Delta, your AI-powered Virtual Assistant. How can I assist you today?")
             continue
+        elif user_input.lower() in Repeat_list:
+            print("You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
+            continue
         response = chatbot.get_response(user_input)
         print(f"{response}")
-
 
 # Run the chatbot in Google Colab
 if __name__ == "__main__":
