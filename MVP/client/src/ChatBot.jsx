@@ -1,16 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Moon, Sun } from "lucide-react";
-const MY_RASA_API =  import.meta.env.VITE_RASA_API
+
+const MY_FLASK_API = import.meta.env.VITE_FLASK_API;
 
 export default function ChatBot() {
-  
   const [darkMode, setDarkMode] = useState(true);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
-  // const PDFLINK = "https://rera.rajasthan.gov.in/Content/uploads/f70aed69-0f30-420b-9b46-9c47f2235e98.PDF";
 
-  // Detect system theme preference
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     setDarkMode(mediaQuery.matches);
@@ -21,62 +19,68 @@ export default function ChatBot() {
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  // Scroll to the bottom when messages change
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
-
-  // Function to process bot messages and handle line breaks correctly
-  const processBotMessages = useCallback((data) => {
-    const botMessages = data
-      .map((msg) => {
-        if (msg.text.includes("[Click Here for PDF]")) {
-          return {
-            sender: "bot",
-            text: `Here is the link for the PDF: <a href="${PDFLINK}" target="_blank" class="text-blue-500">Click Here for PDF</a>`,
-          };
-        }
-        return { sender: "bot", text: msg.text };
-      })
-      .map((msg) => msg.text)
-      .join("<br />")
-      .split("<br />");
-
-    botMessages.forEach((msg, index) => {
-      setTimeout(() => {
-        setMessages((prev) => [...prev, { sender: "bot", text: msg }]);
-      }, index * 500);
+  if (messages.length > 0) {
+    messagesEndRef.current?.scrollIntoView({ 
+      behavior: "smooth", 
+      block: "nearest" // Ensures scrolling happens inside chat only
     });
+  }
+}, [messages]);
+
+
+  const processBotMessages = useCallback(async (data) => {
+    const botResponses = data.response.split("<br />");
+
+    for (const text of botResponses) {
+      setMessages((prev) => [...prev, { sender: "bot", text }]);
+      await new Promise((resolve) => setTimeout(resolve, 500)); // 0.5s delay
+    }
   }, []);
 
-  // Merged function to handle both initial and user messages
   const handleMessage = async (userInput = null) => {
-    const messageText = userInput || "hi"; // "hi" for initial message
+    const messageText = userInput || "first greet";
 
     if (userInput) {
       setMessages((prev) => [...prev, { sender: "user", text: userInput }]);
-      setInput(""); // Clear input only if it's user-triggered
+      setInput("");
     }
 
-    const response = await fetch(MY_RASA_API, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ sender: "user", message: messageText }),
-    });
+    try {
+      const response = await fetch(`${MY_FLASK_API}/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: messageText }),
+      });
 
-    const data = await response.json();
-    if (data.length > 0) processBotMessages(data);
+      const data = await response.json();
+      processBotMessages(data);
+    } catch (error) {
+      console.error("Error fetching chatbot response:", error);
+    }
   };
 
-  // Call handleMessage on mount to send initial "hi" message
   useEffect(() => {
     handleMessage();
   }, []);
 
   return (
     <div className={darkMode ? "dark" : ""}>
-      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
-        <nav className="flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
+      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors relative">
+        {/* <div className="absolute inset-0 z-0 opacity-[50%]">
+          <div className="relative w-full h-[100vh] sm:h-[70vh] md:h-[100vh]">
+            <iframe
+              src="https://gifer.com/embed/BLkE"
+              width="100%"
+              height="100%"
+              className="absolute top-0 left-0 w-full h-full"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div> */}
+
+        <nav className="relative z-10 flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
           <h1 className="text-xl font-bold">VoiceDrift AI ChatBot</h1>
           <button
             onClick={() => setDarkMode((prev) => !prev)}
@@ -86,7 +90,7 @@ export default function ChatBot() {
           </button>
         </nav>
 
-        <div className="flex flex-col items-center justify-end sm:h-[80vh] md:h-[90vh] p-4">
+        <div className="relative z-10 flex flex-col items-center justify-end sm:h-[80vh] md:h-[90vh] p-4">
           <div className="w-full max-w-2xl bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 flex flex-col gap-3">
             <div className="h-[500px] overflow-y-auto p-3 border-b border-gray-300 dark:border-gray-700">
               {messages.map((msg, index) => (
@@ -102,8 +106,9 @@ export default function ChatBot() {
                     maxWidth: msg.sender === "user" ? "70%" : "100%",
                     marginLeft: msg.sender === "user" ? "auto" : "0",
                   }}
-                  dangerouslySetInnerHTML={{ __html: msg.text }}
-                />
+                >
+                  {msg.text}
+                </div>
               ))}
               <div ref={messagesEndRef} />
             </div>

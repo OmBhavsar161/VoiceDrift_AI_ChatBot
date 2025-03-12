@@ -1,10 +1,10 @@
 import re
 
-Greeting_list = ["hi", "hii", "hiii", "hello", "hey", "hi there", "delta"]
-Goodbye_list = ["exit", "quit", "bye"]
-Deny_list = ["no", "not", "never", "none", "nn", "n"]
-Affirm_list = ["yes", "ofcourse", "why not", "y", "yy", "yeah", "yup", "sure", "absolutely", "definitely", "certainly", "ok", "okay", "indeed", "right", "true", "affirmative", "correct", "exactly"]
-Repeat_list = ["repeat", "repeat again", "can't hear", "repeat yourself", "say again"]
+# Greeting_list = ["hi", "hii", "hiii", "hello", "hey", "hi there", "delta"]
+# Goodbye_list = ["exit", "quit", "bye"]
+# Deny_list = ["no", "not", "never", "none", "nn", "n"]
+# Affirm_list = ["yes", "ofcourse", "why not", "y", "yy", "yeah", "yup", "sure", "absolutely", "definitely", "certainly", "ok", "okay", "indeed", "right", "true", "affirmative", "correct", "exactly"]
+# Repeat_list = ["repeat", "repeat again", "can't hear", "repeat yourself", "say again"]
 
 class VoiceDriftChatbot:
     def __init__(self):
@@ -60,7 +60,7 @@ class VoiceDriftChatbot:
         3. Water Table: The upper surface of the zone of saturation.<br />
         4. Piezometric Surface: The level to which water will rise in a well.
         """
-
+    
     def training_opportunities_response(self):
         return "Training opportunities include workshops and courses offered by institutions like the Central Ground Water Board (CGWB) and National Institute of Hydrology (NIH)."
 
@@ -69,11 +69,32 @@ class VoiceDriftChatbot:
 
     def repeat_response(self):
         return "You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+    
+    def first_greet(self):
+        return "Hii! Welcome to the VoiceDrift AI Chatbot!<br />I am Delta, your AI-powered Virtual Assistant. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+    
+    def greet(self):
+        return "Hi! I am Delta, your AI-powered Virtual Assistant. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+    
+    def exit(self):
+        return "Goodbye! Have a nice day."
+
 
     def get_response(self, user_input):
         user_input = user_input.lower()
-        if user_input in Repeat_list:
+        if re.search(r"first greet", user_input):
+            return self.first_greet()
+        if re.search(r"repeat|repeat again|can't hear|repeat yourself|say again", user_input):
             return self.repeat_response()
+        if re.search(r"hi|hii|hiii|hello|hey|hi there|delta", user_input):
+            return self.greet()
+        if re.search(r"exit|quit|bye", user_input):
+            return self.exit()
+        # if re.search(r"yes|ofcourse|why not|y|yy|yeah|yup|sure|absolutely|definitely|certainly|ok|okay|indeed|right|true|affirmative|correct|exactly", user_input):
+        #     return "Great! How can I assist you further?"
+        # if re.search(r"no|not|never|none|nn|n", user_input):
+        #     return "Alright, let me know if you need anything else."
+        
         if re.search(r"water level|level of water|depth of water|groundwater depth", user_input):
             return self.responses["water_level"]()
         elif re.search(r"hydrogeological|aquifer|groundwater flow|subsurface water", user_input):
@@ -102,27 +123,27 @@ class VoiceDriftChatbot:
 # Chatbot Interaction
 def chat():
     chatbot = VoiceDriftChatbot()
-    print("Hii! Welcome to the VoiceDrift AI Chatbot!<br />I am Delta, your AI-powered Virtual Assistant. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
+    # print("Hii! Welcome to the VoiceDrift AI Chatbot!<br />I am Delta, your AI-powered Virtual Assistant. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
 
-    while True:
-        user_input = input("Enter here: ")
-        if user_input.lower() in Goodbye_list:
-            print("No problem. Is there anything else I can assist you with?")
-            follow_up = input("Enter here: ")
-            if follow_up.lower() in Deny_list:
-                print("Goodbye! Have a nice day.")
-                break
-            elif follow_up.lower() in Affirm_list:
-                print("You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
-                continue
-        elif user_input.lower() in Greeting_list:
-            print("Hi! I am Delta, your AI-powered Virtual Assistant. How can I assist you today?")
-            continue
-        elif user_input.lower() in Repeat_list:
-            print("You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
-            continue
-        response = chatbot.get_response(user_input)
-        print(f"{response}")
+    # while True:
+    #     user_input = input("Enter here: ")
+    #     if user_input.lower() in Goodbye_list:
+    #         print("No problem. Is there anything else I can assist you with?")
+    #         follow_up = input("Enter here: ")
+    #         if follow_up.lower() in Deny_list:
+    #             print("Goodbye! Have a nice day.")
+    #             break
+    #         elif follow_up.lower() in Affirm_list:
+    #             print("You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
+    #             continue
+    #     elif user_input.lower() in Greeting_list:
+    #         print("Hi! I am Delta, your AI-powered Virtual Assistant. How can I assist you today?")
+    #         continue
+    #     elif user_input.lower() in Repeat_list:
+    #         print("You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report.")
+    #         continue
+    #     response = chatbot.get_response(user_input)
+    #     print(f"{response}")
 
 # Run the chatbot in Google Colab
 if __name__ == "__main__":

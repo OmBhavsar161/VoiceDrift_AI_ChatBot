@@ -3,8 +3,7 @@ from chatbot_brain import VoiceDriftChatbot
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
-
+CORS(app, resources={r"/chat": {"origins": "*"}})  # Allow all origins for /chat
 # Initialize chatbot
 chatbot = VoiceDriftChatbot()
 
@@ -13,6 +12,7 @@ chatbot = VoiceDriftChatbot()
 def chat():
     data = request.get_json()
     user_input = data.get("message", "").strip()
+    print(user_input)
 
     if not user_input:
         return jsonify({"response": "Please enter a message."})
