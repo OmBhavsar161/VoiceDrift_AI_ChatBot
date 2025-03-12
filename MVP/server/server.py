@@ -3,7 +3,7 @@ from chatbot_brain import VoiceDriftChatbot
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/chat": {"origins": "*"}})  # Allow all origins for /chat
+CORS(app)  # Allows all origins for all routes
 # Initialize chatbot
 chatbot = VoiceDriftChatbot()
 
