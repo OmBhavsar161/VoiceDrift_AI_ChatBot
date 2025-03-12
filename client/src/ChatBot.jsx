@@ -23,7 +23,12 @@ export default function ChatBot() {
 
   // Scroll to the bottom when messages change
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messages.length > 0) {
+      messagesEndRef.current?.scrollIntoView({ 
+        behavior: "smooth", 
+        block: "nearest" // Ensures scrolling happens inside chat only
+      });
+    }
   }, [messages]);
 
   // Function to process bot messages and handle line breaks correctly
