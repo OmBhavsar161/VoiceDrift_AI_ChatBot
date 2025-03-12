@@ -98,8 +98,8 @@ export default function ChatBot() {
                   key={index}
                   className={`p-2 my-1 text-sm sm:text-base ${
                     msg.sender === "user"
-                      ? "bg-blue-500 text-white self-end max-w-[40%] break-words whitespace-pre-wrap rounded-2xl px-4 my-4 mr-[-5px] sm:mr-0"
-                      : "bg-gray-200 dark:bg-gray-700 self-start text-left w-full rounded-md ml-[-10px] sm:ml-0"
+                      ? "bg-blue-500 text-white self-end max-w-[40%] break-words whitespace-pre-wrap rounded-2xl px-4 my-4 mr-[-3px] sm:mr-0"
+                      : "bg-gray-200 dark:bg-gray-700 self-start text-left w-full rounded-md ml-[-10px] sm:ml-0 pr-[30px]"
                   }`}
                   style={{
                     width: msg.sender === "user" ? "fit-content" : "100%",
