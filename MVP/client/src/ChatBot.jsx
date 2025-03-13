@@ -65,8 +65,11 @@ export default function ChatBot() {
   };
 
   useEffect(() => {
-    handleMessage();
-  }, []);
+    if (!loading) {
+      handleMessage();
+    }
+  }, [loading]);
+  
 
   if (loading) {
     return (
