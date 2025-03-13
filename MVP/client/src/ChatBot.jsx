@@ -4,6 +4,7 @@ import { Moon, Sun } from "lucide-react";
 const MY_FLASK_API = import.meta.env.VITE_FLASK_API;
 
 export default function ChatBot() {
+  const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(true);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -20,21 +21,24 @@ export default function ChatBot() {
   }, []);
 
   useEffect(() => {
-  if (messages.length > 0) {
-    messagesEndRef.current?.scrollIntoView({ 
-      behavior: "smooth", 
-      block: "nearest" // Ensures scrolling happens inside chat only
-    });
-  }
-}, [messages]);
+    if (messages.length > 0) {
+      messagesEndRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+    }
+  }, [messages]);
 
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 3500);
+  }, []);
 
   const processBotMessages = useCallback(async (data) => {
     const botResponses = data.response.split("<br />");
 
     for (const text of botResponses) {
       setMessages((prev) => [...prev, { sender: "bot", text }]);
-      await new Promise((resolve) => setTimeout(resolve, 500)); // 0.5s delay
+      await new Promise((resolve) => setTimeout(resolve, 500));
     }
   }, []);
 
@@ -64,22 +68,35 @@ export default function ChatBot() {
     handleMessage();
   }, []);
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900">
+        <div className="relative p-2 rounded-full">
+          {/* Animated Border */}
+          <div className="absolute inset-0 w-full h-full rounded-full p-[3px] animate-borderSpin">
+            <div
+              className="absolute inset-0 w-full h-full bg-gradient-to-r from-cyan-500 via-blue-600 to-pink-500 rounded-full blur-xl xl:blur-2xl opacity-80 animate-borderSpin"
+            ></div>{" "}
+            {/* Shadow Effect */}
+            <div className="w-full h-full bg-gray-100 dark:bg-gray-900 rounded-full"></div>{" "}
+            {/* Inner Circle */}
+          </div>
+
+          {/* Image */}
+          <img
+            src="/Loader Logo.png"
+            alt="Loading..."
+            className="relative w-40 h-w-40 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-64 lg:h-w-64 xl:w-[330px] xl:h-[330px]
+        object-contain rounded-full "
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={darkMode ? "dark" : ""}>
       <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors relative">
-        {/* <div className="absolute inset-0 z-0 opacity-[50%]">
-          <div className="relative w-full h-[100vh] sm:h-[70vh] md:h-[100vh]">
-            <iframe
-              src="https://gifer.com/embed/BLkE"
-              width="100%"
-              height="100%"
-              className="absolute top-0 left-0 w-full h-full"
-              frameBorder="0"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div> */}
-
         <nav className="relative z-10 flex items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 shadow-md">
           <h1 className="text-xl font-bold">VoiceDrift AI ChatBot</h1>
           <button
