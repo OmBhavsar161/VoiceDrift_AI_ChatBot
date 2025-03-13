@@ -79,9 +79,10 @@ export default function ChatBot() {
 
   // Call handleMessage on mount to send initial "hi" message
   useEffect(() => {
-    handleMessage();
-  }, []);
-
+    if (!loading) {
+      handleMessage();
+    }
+  }, [loading]);
 
   if (loading) {
     return (
