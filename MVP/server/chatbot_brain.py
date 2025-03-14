@@ -71,10 +71,10 @@ class VoiceDriftChatbot:
         return "You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
     
     def first_greet(self):
-        return "Hii! Welcome to the VoiceDrift AI Chatbot!<br />I am Delta, your AI-powered Virtual Assistant. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+        return "Hii! Welcome to the VoiceDrift AI Chatbot!<br />I am Delta, your AI-powered Virtual Assistant 🤖. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
     
     def greet(self):
-        return "Hi! I am Delta, your AI-powered Virtual Assistant. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+        return "Hi! I am Delta, your AI-powered Virtual Assistant 🤖. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
     
     def exit(self):
         return "Goodbye! Have a nice day."
