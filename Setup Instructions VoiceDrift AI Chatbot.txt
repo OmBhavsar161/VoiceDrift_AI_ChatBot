@@ -1,0 +1,31 @@
+To Activate Virtual Environment:
+.\rasa-env\Scripts\activate
+
+To close Virtual Environment
+deactivate 
+
+1. rasa train
+
+2. Rasa data validate
+
+3. rasa run --enable-api --cors "*"
+
+
+
+For Debugging:
+> rasa shell
+> rasa shell nlu
+
+
+Note: When ever making any changes in rasa just run all commands from '1.'
+
+
+
+-----------For MVP Model-------------
+Open 'server.py' and press run button to start backend server beacuse in MVP Flask is used as backend
+
+
+
+
+For in depth information:
+https://docs.google.com/document/d/1ngG6IRJjJRZfDZjthByuqCUva0ECK4jhlZmCENMLWD4/edit?usp=sharing
