@@ -107,3 +107,21 @@ stories:
   steps:
     - intent: nlu_fallback
     - action: utter_default
+
+- story: Area categorization flow
+  steps:
+    - intent: ask_area_categorization
+    - action: utter_ask_area
+    - intent: ahmedabad_city
+    - action: utter_ahmedabad_city
+    - intent: sanand
+    - action: utter_sanand
+    - intent: dandhuka
+    - action: utter_dandhuka
+    - intent: bavla
+    - action: utter_bavla
+    - intent: viramgam
+    - action: utter_viramgam
+    - intent: detroj_rampura
+    - action: utter_detroj_rampura
+

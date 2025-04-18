@@ -97,6 +97,7 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - introduce yourself
 
 - intent: water_level
   examples: |
@@ -190,6 +191,88 @@ nlu:
     - What did you just say?
     - Repeat the last message
 
+- intent: ph_level
+  examples: |
+    - What is the pH level in water?
+    - Tell me about pH in water
+    - What should be the pH of drinking water?
+    - Is low pH water harmful?
+    - Explain water pH
+    - ph
+
+- intent: tds_level
+  examples: |
+    - What is TDS in water?
+    - Ideal TDS level for drinking?
+    - Is high TDS bad for health?
+    - What should be the TDS value?
+    - Tell me about water TDS
+    - tds
+    - tds levels
+
+- intent: hardness_level
+  examples: |
+    - What is water hardness?
+    - Is the water too hard to use?
+    - What causes hard water?
+    - Ideal hardness level in water?
+    - Explain hardness in water
+    - hardness
+    - hardness levels
+
+- intent: contamination_level
+  examples: |
+    - How to know if water is contaminated?
+    - What are contamination levels?
+    - Tell me about water pollution
+    - What are common water contaminants?
+    - Is there contamination in drinking water?
+    - contamination
+    - contamination level
 
 
+- intent: ask_area_categorization
+  examples: |
+    - Tell me about area categorization
+    - I want to know groundwater categorization
+    - Categorization of the area
+    - What is the groundwater status?
+    - area
+    - area wise
+
+- intent: ahmedabad_city
+  examples: |
+    - Ahmedabad City
+    - Tell me about Ahmedabad
+    - Categorization of Ahmedabad City
+
+- intent: sanand
+  examples: |
+    - Sanand
+    - Show categorization of Sanand
+    - Groundwater details in Sanand
+
+- intent: dandhuka
+  examples: |
+    - Dhandhuka
+    - Categorization for Dhandhuka
+    - Groundwater status of Dhandhuka
+
+- intent: bavla
+  examples: |
+    - Bavla
+    - Details about Bavla area
+    - Bavla water category
+
+- intent: viramgam
+  examples: |
+    - Viramgam
+    - Tell about Viramgam categorization
+    - Groundwater info of Viramgam
+
+- intent: detroj_rampura
+  examples: |
+    - Detroj Rampura
+    - Groundwater of Detroj
+    - Detroj-Rampura categorization
 

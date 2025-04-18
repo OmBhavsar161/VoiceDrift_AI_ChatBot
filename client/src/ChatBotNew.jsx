@@ -45,7 +45,7 @@ export default function ChatBotNew() {
     botMessages.forEach((msg, index) => {
       setTimeout(() => {
         setMessages((prev) => [...prev, { sender: "bot", text: msg }]);
-      }, index * 500);
+      }, index * 450);
     });
   }, []);
 

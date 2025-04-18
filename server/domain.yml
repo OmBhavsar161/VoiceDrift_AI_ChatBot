@@ -17,19 +17,37 @@ intents:
   - groundwater_terms
   - training_opportunities
   - out_of_scope
-  - repeat_yourself
+  - repeat_yourself  
+  - ph_level
+  - tds_level
+  - hardness_level
+  - contamination_level
+  - ask_area_categorization
+  - ahmedabad_city
+  - sanand
+  - dandhuka
+  - bavla
+  - viramgam
+  - detroj_rampura
+
   
 
 responses:
   utter_greet:
-    - text: "Hii! Welcome to the VoiceDrift AI Chatbot!<br />I am Delta, your AI-powered Virtual Assistant. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+    - text: "Hii! Welcome to the VoiceDrift AI Chatbot!<br />I am Delta, your AI-powered Virtual Assistant. How can I assist you today?<br />You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report, Training Opportunities, Area Categorization."
+
+  utter_default:
+    - text: "I'm sorry, I didn't understand your query.<br />Please ask about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report, Training Opportunities, Area Categorization."
+
+  utter_you_can_ask:
+    - text: "You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report, Training Opportunities, Area Categorization."
 
 
   utter_goodbye:
     - text: "Goodbye! Have a nice day."
 
   utter_water_level:
-    - text: "The water level scenario depends on the aquifer type, recharge rates, and extraction patterns. For specific data, please refer to the latest groundwater assessment report for your area."
+    - text: "The water level scenario depends on the aquifer type, recharge rates, and extraction patterns. These factors influence the availability and sustainability of groundwater in a region. Monitoring these variables regularly helps in understanding the long-term water availability and potential risks.<br /> For specific data, please refer to the latest groundwater assessment report for your area, which provides detailed insights on current water levels, trends, and recommendations for sustainable water management."
 
   utter_hydrogeological_scenario:
     - text: "The hydrogeological scenario includes information about aquifer properties, groundwater flow, and recharge mechanisms. Detailed studies are required for accurate assessment."
@@ -41,15 +59,37 @@ responses:
     - text: "Available reports include Groundwater Resource Assessment Reports, Water Quality Reports, and Hydrogeological Studies. Contact your local groundwater authority for access."
 
   utter_generate_report:
-    - text: |
-        Comprehensive Groundwater Report:<br />
-        1. Groundwater Resource Assessment: Includes recharge rates, extraction data, and sustainability analysis.<br />
-        2. Categorization of the Area: Classified as Safe, Semi-Critical, Critical, or Over-Exploited based on groundwater usage.<br />
-        3. Groundwater Management Practices: Recommendations for rainwater harvesting, artificial recharge, and sustainable extraction.<br />
-        4. NOC Conditions: Conditions for obtaining NOC include permissible extraction limits, purpose of use, and compliance with regulations.<br />
-        5. How to Obtain NOC: Submit an application to the groundwater authority with required documents like site details, extraction purpose, and hydrogeological report.<br />
-        6. Groundwater Terms: Definitions of terms like Aquifer, Recharge, Water Table, and Piezometric Surface.<br />
-        7. Training Opportunities: Workshops and courses on groundwater management are offered by institutions like CGWB and NIH.
+  - text: |
+      Comprehensive Groundwater Report:
+      <br />
+      1. Groundwater Resource Assessment: This includes an analysis of groundwater recharge rates, extraction data, and sustainability. Recharge rates are calculated based on rainfall, surface water availability, and other factors. Extraction data covers water usage for agriculture, industry, and domestic purposes. Sustainability analysis evaluates the balance between recharge and extraction, ensuring that groundwater resources are not over-exploited.<br />
+      2. Categorization of the Area: The area is categorized based on groundwater usage:<br />
+         - Safe Areas: Groundwater recharge exceeds or matches extraction, ensuring long-term sustainability.<br />
+         - Semi-Critical Areas: Recharge rates are close to extraction, requiring management to prevent depletion.<br />
+         - Critical Areas: Unsustainable extraction with a high risk of depletion.<br />
+         - Over-Exploited Areas: Groundwater extraction exceeds recharge, causing drastic water level drops.<br />
+      3. Groundwater Management Practices: <br />
+         - Rainwater Harvesting: Implement systems to capture rainwater, aiding groundwater recharge.<br />
+         - Artificial Recharge: Create recharge wells and ponds to replenish aquifers.<br />
+         - Sustainable Extraction: Adopt efficient irrigation techniques, such as drip irrigation, to reduce groundwater dependency.<br />
+         - Regulation and Monitoring: Continuous monitoring of extraction levels to prevent overuse and to ensure sustainability.<br />
+      4. NOC Conditions: Conditions for obtaining a No Objection Certificate (NOC) include:<br />
+         - Permissible Extraction Limits: Adherence to limits set by local authorities based on area classification.<br />
+         - Purpose of Use: A clear explanation of water usage, whether for domestic, agricultural, or industrial purposes.<br />
+         - Compliance with Regulations: Ensuring that the extraction process aligns with groundwater conservation rules and regulations.<br />
+      5. How to Obtain NOC: The steps to apply for a NOC include:<br />
+         - Application Submission: Submit a formal request to the relevant groundwater authority.<br />
+         - Required Documents: Include site details, purpose of extraction, and a hydrogeological report prepared by a certified expert.<br />
+      6. Groundwater Terms: Here are some essential definitions:<br />
+         - Aquifer: A water-bearing geological formation capable of yielding groundwater.<br />
+         - Recharge: The process through which groundwater is replenished, primarily through precipitation.<br />
+         - Water Table: The level beneath the ground where soil or rock is saturated with water.<br />
+         - Piezometric Surface: The level to which water rises in a well in a confined aquifer, indicating the pressure head.<br />
+      7. Training Opportunities: Various institutions offer training to help professionals understand and manage groundwater resources:<br />
+         - Central Ground Water Board (CGWB): Offers workshops on groundwater assessment and sustainable management practices.<br />
+         - National Institute of Hydrology (NIH): Provides training courses on groundwater modeling, fieldwork, and water quality management.<br />
+         - Online Platforms: Numerous online courses on groundwater management are available through platforms like Coursera and edX, covering topics like water sustainability and groundwater recharge techniques.
+
 
   utter_noc_conditions:
     - text: "Conditions for obtaining NOC include permissible extraction limits, purpose of use (domestic/industrial/agricultural), and compliance with groundwater regulations."
@@ -61,8 +101,8 @@ responses:
     # <br />Would you like to receive a PDF of these guidance details?" 
  
 
-  utter_pdf_link:
-    - text: "Here is the link for the PDF: [Click Here for PDF](https://rera.rajasthan.gov.in/Content/uploads/f70aed69-0f30-420b-9b46-9c47f2235e98.PDF)"
+  # utter_pdf_link:
+  #   - text: "Here is the link for the PDF: [Click Here for PDF](https://rera.rajasthan.gov.in/Content/uploads/f70aed69-0f30-420b-9b46-9c47f2235e98.PDF)"
 
   utter_groundwater_terms:
     - text: |
@@ -73,19 +113,101 @@ responses:
         4. Piezometric Surface: The level to which water will rise in a well.
 
   utter_training_opportunities:
-    - text: "Training opportunities include workshops and courses offered by institutions like the Central Ground Water Board (CGWB) and National Institute of Hydrology (NIH)."
+    - text: "Training opportunities include workshops and courses offered by institutions like the Central Ground Water Board (CGWB) and National Institute of Hydrology (NIH). These programs cover various aspects of groundwater management, such as water conservation techniques, aquifer recharge strategies, and water quality monitoring. <br /> Additionally, local universities and environmental NGOs offer specialized training on groundwater modeling, field surveys, and the sustainable use of water resources. <br /> Many of these programs are also aimed at policymakers and practitioners, providing them with the necessary tools and knowledge to implement effective water management strategies in their regions. <br /> You can also access online courses from renowned platforms to learn at your own pace."
   
-  utter_default:
-    - text: "I'm sorry, I didn't understand your query.<br />Please ask about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
+  
 
-  utter_negative_response:
-    - text: "No problem. Is there anything else I can assist you with?"
+  # utter_negative_response:
+  #   - text: "No problem. Is there anything else I can assist you with?"
 
-  utter_you_can_ask:
-    - text: "You can ask me about water levels, hydrogeological scenarios, water quality, available reports, NOC conditions, NOC Guidance, Ground Water terms, Ground Water Report."
 
   utter_iamabot:
     - text: "I am Delta, your AI powered Virtual Assistant. How can I assist you today?."
+  
+
+  utter_ph_level:
+    - text: |
+        pH in Water:<br />
+        The pH value indicates how acidic or alkaline the water is.<br />
+        • Safe range for drinking water: 6.5 to 8.5<br />
+        • Low pH (<6.5) means acidic water - can corrode pipes and affect health.<br />
+        • High pH (>8.5) can lead to a bitter taste and reduce effectiveness of disinfectants.<br />
+        Regular monitoring is essential to ensure balanced pH levels.
+
+  utter_tds_level:
+    - text: |
+        TDS (Total Dissolved Solids):<br />
+        TDS measures the amount of minerals, salts, and organic matter in water.<br />
+        • Ideal TDS for drinking: 50-300 mg/L<br />
+        • Above 500 mg/L may affect taste and long-term health.<br />
+        • TDS sources include natural minerals, sewage, and industrial waste.<br />
+        RO systems are often used to reduce high TDS.
+
+  utter_hardness_level:
+    - text: |
+        Water Hardness:<br />
+        Hardness is caused by dissolved calcium and magnesium salts.<br />
+        • Classification:<br />
+          - Soft: 0-60 mg/L<br />
+          - Moderately hard: 61-120 mg/L<br />
+          - Hard: 121-180 mg/L<br />
+          - Very hard: >180 mg/L<br />
+        • Hard water can cause scaling in pipes and reduce soap effectiveness.<br />
+        • Not a health risk but may affect daily use.
+
+  utter_contamination_level:
+    - text: |
+        Water Contamination:<br />
+        Contamination includes harmful substances like bacteria, viruses, heavy metals, and nitrates.<br />
+        • Common sources: sewage leaks, industrial waste, agricultural runoff.<br />
+        • Health risks: diarrhea, heavy metal poisoning, long-term toxicity.<br />
+        • Periodic lab testing is essential to detect and manage contaminants.<br />
+        Use certified filters and avoid drinking from unknown sources.
+
+  utter_ask_area:
+    - text: Please specify the area you want to know about for groundwater categorization (e.g., Ahmedabad City, Sanand, Bavla, Dandhuka, Viramgam, Detroj Rampura).
+
+  utter_ahmedabad_city:
+    - text: |
+        Ahmedabad City:<br />
+        - Categorization: Semi-Critical<br />
+        - Description: Ahmedabad City experiences moderate levels of groundwater extraction primarily for domestic, industrial, and limited agricultural use. Recharge sources include rainfall, surface water percolation, and limited artificial recharge structures. The balance between recharge and extraction is delicate and requires proactive management to prevent depletion.<br />
+        - Suggested Practices: Promote rooftop rainwater harvesting on residential and commercial buildings, implement rain gardens in urban planning, regulate borewell licensing, and carry out periodic water audits to monitor usage patterns.
+
+  utter_sanand:
+    - text: |
+        Sanand:<br />
+        - Categorization: Over-Exploited<br />
+        - Description: Sanand, due to the presence of extensive industrial zones and water-intensive agriculture, has witnessed heavy withdrawal of groundwater far exceeding natural recharge. This has resulted in a consistent decline in water tables and increasing dependency on deeper aquifers.<br />
+        - Suggested Practices: Enforce strict groundwater regulation policies, promote industrial water recycling, restrict further borewell installation, initiate artificial recharge projects like recharge shafts and check dams, and encourage drip and sprinkler irrigation for farmers.
+
+  utter_dandhuka:
+    - text: |
+        Dhandhuka:<br />
+        - Categorization: Critical<br />
+        - Description: Dhandhuka is heavily dependent on groundwater for agricultural activities. However, the high extraction rates combined with insufficient natural recharge have caused a rapid decline in water levels. Salinity issues are also beginning to emerge in certain pockets due to overuse.<br />
+        - Suggested Practices: Introduce micro-irrigation techniques like drip irrigation, construct farm ponds and recharge pits, educate farmers on efficient water use, and impose seasonal restrictions on high-consumption crops like sugarcane and paddy.
+
+  utter_bavla:
+    - text: |
+        Bavla:<br />
+        - Categorization: Semi-Critical<br />
+        - Description: Bavla is in a transitional phase with extraction rates approaching the natural recharge limits. Agriculture and small-scale industries contribute to the growing pressure on groundwater resources.<br />
+        - Suggested Practices: Encourage community-based water budgeting, set up rooftop rainwater harvesting on institutional buildings, strengthen village-level water user associations, and install recharge trenches and injection wells.
+
+  utter_viramgam:
+    - text: |
+        Viramgam:<br />
+        - Categorization: Safe<br />
+        - Description: Viramgam maintains a positive balance between groundwater extraction and recharge due to lower population density and relatively less industrial activity. Natural recharge through seasonal rainfall is sufficient to replenish aquifers.<br />
+        - Suggested Practices: Preserve existing recharge zones, continue current sustainable practices, promote awareness campaigns to avoid wastage, and maintain monitoring through piezometers to track changes in water levels.
+
+  utter_detroj_rampura:
+    - text: |
+        Detroj-Rampura:<br />
+        - Categorization: Critical<br />
+        - Description: The area has shown alarming trends in groundwater withdrawal, primarily for agriculture. Shallow aquifers are drying up and deeper aquifers are being tapped without adequate replenishment, raising concerns for long-term water security.<br />
+        - Suggested Practices: Rejuvenate existing check dams, build percolation tanks and recharge wells, ban water-intensive crops during dry seasons, and implement village-level groundwater committees for resource monitoring and regulation.
 
 session_config:
   session_expiration_time: 60

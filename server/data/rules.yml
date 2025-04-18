@@ -17,4 +17,24 @@ rules:
   - intent: nlu_fallback
   - action: utter_default
 
+- rule: respond to pH query
+  steps:
+    - intent: ph_level
+    - action: utter_ph_level
+
+- rule: respond to TDS query
+  steps:
+    - intent: tds_level
+    - action: utter_tds_level
+
+- rule: respond to hardness query
+  steps:
+    - intent: hardness_level
+    - action: utter_hardness_level
+
+- rule: respond to contamination query
+  steps:
+    - intent: contamination_level
+    - action: utter_contamination_level
+
 
