@@ -6,7 +6,7 @@ deactivate
 
 1. rasa train
 
-2. Rasa data validate
+2. rasa data validate
 
 3. rasa run --enable-api --cors "*"
 
