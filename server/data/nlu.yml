@@ -98,6 +98,7 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - introduce yourself
+    - who are you
 
 - intent: water_level
   examples: |
@@ -135,7 +136,7 @@ nlu:
     - What are the conditions for NOC?
     - Tell me the NOC rules
     - What are the NOC requirements?
-    = noc rules
+    - noc rules
 
 - intent: noc_guidance
   examples: |
@@ -152,6 +153,9 @@ nlu:
     - Define groundwater terms
     - What is an aquifer?
     - Explain groundwater terminology
+    - ground water terms
+    - ground water terms
+    - ground water
 
 - intent: training_opportunities
   examples: |

@@ -106,11 +106,21 @@ responses:
 
   utter_groundwater_terms:
     - text: |
-        Groundwater Terms:<br />
-        1. Aquifer: A body of permeable rock that can contain or transmit groundwater.<br />
-        2. Recharge: The process by which water enters an aquifer.<br />
-        3. Water Table: The upper surface of the zone of saturation.<br />
-        4. Piezometric Surface: The level to which water will rise in a well.
+        1. Aquifer: <br /> 
+        An aquifer is a geological formation composed of permeable materials such as sand, gravel, or fractured rock that can store and transmit significant quantities of groundwater. Aquifers act as underground reservoirs that provide water to wells, springs, and boreholes. They are classified into two main types:<br />  
+        - Unconfined Aquifers, where the water table forms the upper boundary. <br /> 
+        - Confined Aquifers, which are trapped between layers of impermeable rock or clay and are under pressure.
+
+        2. Recharge:  <br />
+        Recharge is the hydrological process through which water from precipitation (rain, snow), rivers, or other surface sources percolates through the soil and rock to replenish an aquifer. It is essential for maintaining the groundwater balance and is influenced by factors such as land use, vegetation, soil type, and climate. Recharge can be: <br /> 
+        - Natural, through rainfall or surface water infiltration.  <br />
+        - Artificial, via methods like recharge wells or check dams to enhance groundwater replenishment.
+
+        3. Water Table:  <br />
+        The water table is the upper surface of the zone of saturation, where all the pores and fractures in the soil or rock are filled with water. It represents the boundary between the unsaturated zone (above) and the saturated zone (below). The depth of the water table fluctuates with seasonal rainfall, extraction through wells, and recharge rates. <br /> A rising water table indicates increased groundwater availability, while a declining one can be a sign of over-extraction or poor recharge.
+
+        4. Piezometric Surface:  <br />
+        The piezometric surface (also called the potentiometric surface) is the level to which water will naturally rise in a well that taps into a confined aquifer. It reflects the pressure head within the aquifer. If the piezometric surface lies above the land surface, artesian conditions occur, and water may flow freely from the well without pumping.<br /> This concept is crucial for understanding groundwater pressure and designing sustainable extraction systems.
 
   utter_training_opportunities:
     - text: "Training opportunities include workshops and courses offered by institutions like the Central Ground Water Board (CGWB) and National Institute of Hydrology (NIH). These programs cover various aspects of groundwater management, such as water conservation techniques, aquifer recharge strategies, and water quality monitoring. <br /> Additionally, local universities and environmental NGOs offer specialized training on groundwater modeling, field surveys, and the sustainable use of water resources. <br /> Many of these programs are also aimed at policymakers and practitioners, providing them with the necessary tools and knowledge to implement effective water management strategies in their regions. <br /> You can also access online courses from renowned platforms to learn at your own pace."
@@ -122,7 +132,7 @@ responses:
 
 
   utter_iamabot:
-    - text: "I am Delta, your AI powered Virtual Assistant. How can I assist you today?."
+    - text: "I am Delta, your AI powered Virtual Assistant. How can I assist you today?"
   
 
   utter_ph_level:
