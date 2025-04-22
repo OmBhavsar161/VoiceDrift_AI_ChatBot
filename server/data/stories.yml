@@ -114,18 +114,22 @@ stories:
     - action: utter_ask_area
     - intent: ahmedabad_city
     - action: utter_ahmedabad_city
+    - action: utter_groudWater_report_pdf
     - intent: sanand
     - action: utter_sanand
+    - action: utter_groudWater_report_pdf
     - intent: dandhuka
     - action: utter_dandhuka
+    - action: utter_groudWater_report_pdf
     - intent: bavla
     - action: utter_bavla
+    - action: utter_groudWater_report_pdf
     - intent: viramgam
     - action: utter_viramgam
+    - action: utter_groudWater_report_pdf
     - intent: detroj_rampura
     - action: utter_detroj_rampura
-
-
+    - action: utter_groudWater_report_pdf
 
 - story: Say 'I am a bot' anytime the user challenges
   steps:

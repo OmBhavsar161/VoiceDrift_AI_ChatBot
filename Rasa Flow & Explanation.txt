@@ -1,0 +1,46 @@
+🟦 Use rules.yml when:
+The user asks a single, specific question, and you want the bot to respond directly with a simple one-line answer.
+
+There is no follow-up expected in the conversation.
+
+Example:
+User: "What is pH?"
+Bot: "pH is the measure of acidity or alkalinity of water."
+
+✅ Use rules.yml for:
+
+pH
+
+TDS
+
+Hardness
+
+Contamination
+…any static, fact-based response.
+
+
+
+🟦 Use stories.yml when:
+You want to handle a multi-turn conversation where the user might continue asking follow-up questions.
+
+The response needs to change depending on context or what the user said earlier.
+
+Example:
+User: "What is pH?"
+Bot: "pH is the measure of acidity..."
+User: "Can you show me a chart?"
+Bot: "Sure! Here’s the link..."
+
+✅ Use stories.yml when:
+
+The user might ask for more information after the initial reply.
+
+You want the chatbot to handle conversations that have more than one step.
+
+In short:
+
+Use rules = for direct Q&A.
+
+Use stories = for conversations.
+
+

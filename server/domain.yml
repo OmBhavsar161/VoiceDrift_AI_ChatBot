@@ -29,6 +29,7 @@ intents:
   - bavla
   - viramgam
   - detroj_rampura
+  - utter_groudWater_report_pdf
 
   
 
@@ -218,6 +219,18 @@ responses:
         - Categorization: Critical<br />
         - Description: The area has shown alarming trends in groundwater withdrawal, primarily for agriculture. Shallow aquifers are drying up and deeper aquifers are being tapped without adequate replenishment, raising concerns for long-term water security.<br />
         - Suggested Practices: Rejuvenate existing check dams, build percolation tanks and recharge wells, ban water-intensive crops during dry seasons, and implement village-level groundwater committees for resource monitoring and regulation.
+
+  utter_groudWater_report_pdf:
+    - text: |
+        For detail description kindly refer to Report on Dynamic Ground Water Resources of Gujarat.<br /> 
+        <a 
+          href="https://www.cgwb.gov.in/cgwbpnm/public/uploads/documents/17084175271055872857file.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+        >
+          Here is the link for the PDF: [Click Here for PDF] 
+        </a>
+
 
 session_config:
   session_expiration_time: 60
