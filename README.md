@@ -6,7 +6,7 @@
 🤖 **Main Version (Rasa)** – Full-featured AI chatbot with NLP and dialogue management capabilities  
 Both versions use the same responsive frontend built with **React.js** and deployed on **Vercel**.
 
-💡 The MVP version helps overcome Rasa’s deployment limitations on free hosting services, ensuring accessibility and cost-efficiency.
+💡 The MVP version helps overcome Rasa’s deployment limitations on hosting services, ensuring accessibility and cost-efficiency.
 
 ---
 
