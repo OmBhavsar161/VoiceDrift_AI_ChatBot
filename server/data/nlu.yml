@@ -124,12 +124,13 @@ nlu:
     - What reports are available?
     - Show me groundwater reports
     - Do you have a groundwater assessment report?
-
+    
 - intent: generate_report
   examples: |
     - Generate a comprehensive groundwater report
     - I need a groundwater report
     - Give me a full report on groundwater
+    - ground water report
 
 - intent: noc_conditions
   examples: |
