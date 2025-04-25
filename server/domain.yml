@@ -71,35 +71,66 @@ responses:
 
   utter_generate_report:
     - text: |
-        Comprehensive Groundwater Report:
+        Comprehensive Groundwater Report for Gujarat:
         <br />
-        1. Groundwater Resource Assessment: This includes an analysis of groundwater recharge rates, extraction data, and sustainability. Recharge rates are calculated based on rainfall, surface water availability, and other factors. Extraction data covers water usage for agriculture, industry, and domestic purposes. Sustainability analysis evaluates the balance between recharge and extraction, ensuring that groundwater resources are not over-exploited.<br />
-        2. Categorization of the Area: The area is categorized based on groundwater usage:<br />
-          - Safe Areas: Groundwater recharge exceeds or matches extraction, ensuring long-term sustainability.<br />
-          - Semi-Critical Areas: Recharge rates are close to extraction, requiring management to prevent depletion.<br />
-          - Critical Areas: Unsustainable extraction with a high risk of depletion.<br />
-          - Over-Exploited Areas: Groundwater extraction exceeds recharge, causing drastic water level drops.<br />
-        3. Groundwater Management Practices: <br />
-          - Rainwater Harvesting: Implement systems to capture rainwater, aiding groundwater recharge.<br />
-          - Artificial Recharge: Create recharge wells and ponds to replenish aquifers.<br />
-          - Sustainable Extraction: Adopt efficient irrigation techniques, such as drip irrigation, to reduce groundwater dependency.<br />
-          - Regulation and Monitoring: Continuous monitoring of extraction levels to prevent overuse and to ensure sustainability.<br />
-        4. NOC Conditions: Conditions for obtaining a No Objection Certificate (NOC) include:<br />
-          - Permissible Extraction Limits: Adherence to limits set by local authorities based on area classification.<br />
-          - Purpose of Use: A clear explanation of water usage, whether for domestic, agricultural, or industrial purposes.<br />
-          - Compliance with Regulations: Ensuring that the extraction process aligns with groundwater conservation rules and regulations.<br />
-        5. How to Obtain NOC: The steps to apply for a NOC include:<br />
-          - Application Submission: Submit a formal request to the relevant groundwater authority.<br />
-          - Required Documents: Include site details, purpose of extraction, and a hydrogeological report prepared by a certified expert.<br />
-        6. Groundwater Terms: Here are some essential definitions:<br />
-          - Aquifer: A water-bearing geological formation capable of yielding groundwater.<br />
-          - Recharge: The process through which groundwater is replenished, primarily through precipitation.<br />
-          - Water Table: The level beneath the ground where soil or rock is saturated with water.<br />
-          - Piezometric Surface: The level to which water rises in a well in a confined aquifer, indicating the pressure head.<br />
-        7. Training Opportunities: Various institutions offer training to help professionals understand and manage groundwater resources:<br />
-          - Central Ground Water Board (CGWB): Offers workshops on groundwater assessment and sustainable management practices.<br />
-          - National Institute of Hydrology (NIH): Provides training courses on groundwater modeling, fieldwork, and water quality management.<br />
-          - Online Platforms: Numerous online courses on groundwater management are available through platforms like Coursera and edX, covering topics like water sustainability and groundwater recharge techniques.
+        1. Groundwater Resource Assessment: This involves evaluating the availability and sustainability of groundwater resources. Key components include:
+        <br />
+        - Recharge and Extraction Rates: Assessing the balance between groundwater recharge (from rainfall, surface water, and artificial recharge) and extraction for various uses.
+        <br />
+        - Sustainability Analysis: Determining if current extraction rates are sustainable or leading to over-exploitation.
+        <br />
+        2. Categorization of Areas: Based on groundwater availability and usage, areas are categorized as:
+        <br />
+        - Safe: Recharge exceeds or matches extraction, ensuring long-term sustainability.
+        <br />
+        - Semi-Critical: Recharge rates are close to extraction, requiring management to prevent depletion.
+        <br />
+        - Critical: Unsustainable extraction with a high risk of depletion.
+        <br />
+        - Over-Exploited: Groundwater extraction exceeds recharge, causing drastic water level drops.
+        <br />
+        3. Groundwater Management Practices:
+        <br />
+        - Rainwater Harvesting: Implementing systems to capture and store rainwater, aiding groundwater recharge.
+        <br />
+        - Artificial Recharge: Creating recharge wells, ponds, and check dams to replenish aquifers.
+        <br />
+        - Sustainable Extraction: Adopting efficient irrigation techniques, such as drip irrigation, to reduce groundwater dependency.
+        <br />
+        - Regulation and Monitoring: Continuous monitoring of extraction levels to prevent overuse and ensure sustainability.
+        <br />
+        4. NOC Conditions: Conditions for obtaining a No Objection Certificate (NOC) include:
+        <br />
+        - Permissible Extraction Limits: Adherence to limits set by local authorities based on area classification.
+        <br />
+        - Purpose of Use: A clear explanation of water usage, whether for domestic, agricultural, or industrial purposes.
+        <br />
+        - Compliance with Regulations: Ensuring that the extraction process aligns with groundwater conservation rules and regulations.
+        <br />
+        5. How to Obtain NOC:
+        <br />
+        - Application Submission: Submit a formal request to the relevant groundwater authority.
+        <br />
+        - Required Documents: Include site details, purpose of extraction, and a hydrogeological report prepared by a certified expert.
+        <br />
+        6. Groundwater Terms: Here are some essential definitions:
+        <br />
+        - Aquifer: A water-bearing geological formation capable of yielding groundwater.
+        <br />
+        - Recharge: The process through which groundwater is replenished, primarily through precipitation.
+        <br />
+        - Water Table: The level beneath the ground where soil or rock is saturated with water.
+        <br />
+        - Piezometric Surface: The level to which water rises in a well in a confined aquifer, indicating the pressure head.
+        <br />
+        7. Training Opportunities: Various institutions offer training to help professionals understand and manage groundwater resources:
+        <br />
+        - Central Ground Water Board (CGWB): Offers workshops on groundwater assessment and sustainable management practices.
+        <br />
+        - National Institute of Hydrology (NIH): Provides training courses on groundwater modeling, fieldwork, and water quality management.
+        <br />
+        - Online Platforms: Numerous online courses on groundwater management are available through platforms like Coursera and edX, covering topics like water sustainability and groundwater recharge techniques.
+
 
 
   utter_noc_conditions:
