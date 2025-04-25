@@ -8,7 +8,7 @@ Both versions use the same responsive frontend built with **React.js** and deplo
 
 💡 The MVP version helps overcome Rasa’s deployment limitations on free hosting services, ensuring accessibility and cost-efficiency.
 
----
+
 
 ### ⚙️ Core Functionalities:
 💬 Conversational interface with smart response generation  
@@ -18,14 +18,14 @@ Both versions use the same responsive frontend built with **React.js** and deplo
 📱 Fully Responsive UI  
 📄 PDF Download feature for entire chat history (using **`jsPDF`**)
 
----
+
 
 ### 🤖 What is Rasa?  
 **Rasa** is an open-source machine learning framework used to build conversational AI applications like chatbots.  
 It provides tools for understanding natural language, managing dialogues, and interacting with users through text or voice.  
 Ideal for developers looking to create customizable and production-ready virtual assistants.
 
----
+
 
 ### 🛠 Tech Stack
 
@@ -37,9 +37,6 @@ Ideal for developers looking to create customizable and production-ready virtual
 - **Render** (MVP backend deployment)  
 - **jsPDF** (For generating downloadable PDFs of the chat history)
 
----
 
-### 📌 Ideal Use Cases:
-- Groundwater awareness tools for local municipalities  
-- Educational bots for geography/environmental studies  
-- Lightweight, localized chatbots with scalable backend options  
+
+
