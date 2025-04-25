@@ -16,7 +16,7 @@ Both versions use the same responsive frontend built with **React.js** and deplo
 🔁 Static Intent-Response Mapping (Flask MVP)  
 🌐 Webhook Communication (Rasa backend to React frontend)  
 📱 Fully Responsive UI  
-📄 PDF Download feature for entire chat history (using **jsPDF**)
+📄 PDF Download feature for entire chat history (using jsPDF)
 
 ---
 
