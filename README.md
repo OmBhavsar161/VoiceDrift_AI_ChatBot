@@ -1,5 +1,5 @@
 # VoiceDrift AI ChatBot 
-📌 ## **Abstract**  
+## 📌 Abstract  
 **VoiceDrift AI ChatBot** is an intelligent, AI-powered chatbot built to provide **groundwater categorization information for various areas in Ahmedabad**. Designed with a strong focus on user interaction and informative conversations, it comes in two flexible versions:
 
 🔧 **MVP Version (Flask)** – Lightweight, fast, and ideal for deployment (on **Render**)  
