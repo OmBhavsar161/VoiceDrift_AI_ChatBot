@@ -29,11 +29,18 @@ Ideal for developers looking to create customizable and production-ready virtual
 
 ### 🛠 Tech Stack
 
-- **React.js** (Frontend framework)  
-- **Tailwind CSS** (Responsive styling and animations)  
-- **Flask** (MVP backend for quick deployment on Render)  
-- **Rasa** (Main backend for advanced NLP and dialogue handling)  
-- **Vercel** (Frontend deployment platform)  
-- **Render** (MVP backend deployment)  
-- **jsPDF** (For generating downloadable PDFs of the chat history)
+- **React.js** – Frontend framework  
+- **Tailwind CSS** – Responsive styling and animations
+- **Flask** – Lightweight backend for MVP version  
+- **Rasa** – Main backend for advanced NLP and dialogue handling  
+
+---
+
+### 📦 Tools & Integrations
+
+- **jsPDF** – Generate downloadable PDF of the chat history  
+- **Vercel** – Hosting platform for the frontend  
+- **Render** – Hosting platform for the MVP version backend  
+
+
 
