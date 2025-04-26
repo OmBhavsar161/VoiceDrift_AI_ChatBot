@@ -4,11 +4,13 @@ To Activate Virtual Environment:
 To close Virtual Environment
 deactivate 
 
-1. rasa train
+1. conda activate rasa-env
 
-2. rasa data validate
+2. rasa train
 
-3. rasa run --enable-api --cors "*"
+3. rasa data validate
+
+4. rasa run --enable-api --cors "*"
 
 
 
@@ -17,12 +19,14 @@ For Debugging:
 > rasa shell nlu
 
 
-Note: When ever making any changes in rasa just run all commands from '1.'
+Note: When ever making any changes in rasa just run all commands from '2.'
 
 
 
 -----------For MVP Model-------------
 Open 'server.py' and press run button to start backend server beacuse in MVP Flask is used as backend
+
+To Activate flask backend in MVP Model go to 'server.py' and press run button it will start backend
 
 
 
