@@ -71,7 +71,7 @@ responses:
 
   utter_generate_report:
     - text: |
-        Comprehensive Groundwater Report for Gujarat:
+        Comprehensive Groundwater Report:
         <br />
         1. Groundwater Resource Assessment: This involves evaluating the availability and sustainability of groundwater resources. Key components include:
         <br />
