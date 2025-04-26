@@ -33,3 +33,24 @@ To Activate flask backend in MVP Model go to 'server.py' and press run button it
 
 For in depth information:
 https://docs.google.com/document/d/1ngG6IRJjJRZfDZjthByuqCUva0ECK4jhlZmCENMLWD4/edit?usp=sharing
+
+-------------------------------------------------------------------------------------------------------------
+
+some issue occured when moved project to another drive in frontend side sue to vite to solve it
+
+node_modules --> .bin --> vite.cmd 
+--------------------------------------------
+@ECHO off
+SETLOCAL
+SET "dp0=%~dp0"
+
+IF EXIST "%dp0%\node.exe" (
+  SET "_prog=%dp0%\node.exe"
+) ELSE (
+  SET "_prog=node"
+  SET PATHEXT=%PATHEXT:;.JS;=;%
+)
+
+"%_prog%" "%dp0%\..\vite\bin\vite.js" %*
+ENDLOCAL
+--------------------------------------------
